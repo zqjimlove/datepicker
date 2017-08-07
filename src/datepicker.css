@@ -1,6 +1,6 @@
 /*!
  * Datepicker v@VERSION
- * https://github.com/fengyuanchen/datepicker
+ * https:
  *
  * Copyright (c) 2014-@YEAR Fengyuan Chen
  * Released under the MIT license
@@ -13,16 +13,16 @@
 }
 
 .datepicker-container {
+  padding: 20px;
   background-color: #fff;
   direction: ltr;
-  font-size: 12px;
+  font-size: 12px; 
   left: 0;
-  line-height: 30px;
+  line-height: 30px; 
   position: fixed;
   top: 0;
   touch-action: none;
   user-select: none;
-  width: 210px;
   z-index: -1;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -44,7 +44,7 @@
   box-sizing: content-box;
   position: absolute;
   z-index: 1;
-}
+} 
 
 .datepicker-inline {
   position: static;
@@ -102,10 +102,11 @@
 }
 
 
-// Panels
-// -----------------------------------------------------------------------------
+
+
 
 .datepicker-panel {
+  width: 210px;
   & > ul {
     margin: 0;
     padding: 0;
@@ -119,6 +120,17 @@
 
     &:after {
       clear: both;
+    }
+
+    &:first-child{
+      height: 40px;
+      background-color: #eee;
+      margin-bottom: 20px;
+      & > li{
+        background-color: #eee;
+        height: 40px;
+        line-height: 40px;
+      }
     }
 
     & > li {
@@ -136,9 +148,20 @@
         background-color: lighten(var(--brand-color), 35%);
       }
 
+
+
+      &.picked,
+      &.picked:hover {
+        color: var(--brand-color);
+      }
+
       &.muted,
       &.muted:hover {
         color: #999;
+      }
+      
+      &.muted-hide{
+        visibility: hidden;
       }
 
       &.highlighted {
@@ -149,12 +172,7 @@
         }
       }
 
-      &.picked,
-      &.picked:hover {
-        color: var(--brand-color);
-      }
-
-      &.disabled,
+      &.disabled, 
       &.disabled:hover {
         background-color: #fff;
         color: #ccc;
@@ -173,6 +191,10 @@
       &[data-view='month next'],
       &[data-view='next'] {
         font-size: 18px;
+      }
+
+      &[data-view='hidden']{
+        cursor: default;
       }
 
       &[data-view='years current'],
@@ -198,6 +220,30 @@
         cursor: default;
       }
     }
+  }
+}
+
+.datepicker-panel-days{
+  width: 230px;
+  overflow: hidden;
+  display: inline-block;
+    & > [data-view='week'],
+    & > [data-view='days']{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  & > ul{
+    &:first-child{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
+.datepicker-panel-days-bd{
+  & > [data-view='week'],
+  & > [data-view='days']{
+    border-left: 1px solid #000;
   }
 }
 

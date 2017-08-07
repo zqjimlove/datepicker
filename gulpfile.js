@@ -26,7 +26,7 @@ var styles = {
   ],
   main: 'dist/datepicker.css',
   docs: 'docs/css',
-  src: 'src/*.scss',
+  src: 'src/*.css',
   dest: 'dist'
 };
 var replacement = {
